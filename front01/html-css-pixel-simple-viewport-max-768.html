@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, viewport-fit=cover">
+  <title>html-css-pixel-simple-viewport-max-768</title>
+  <style>
+    .box {
+      height: 50px;
+      margin: 0 0 10px 0;
+      background-color: lightblue;
+      box-sizing: border-box;
+      padding: 0;
+      border: 1px solid red;
+    }
+
+    .box-375 {
+      width: 375px;
+    }
+
+    .box-744 {
+      width: 744px;
+    }
+
+    .box-768 {
+      width: 768px;
+    }
+
+    .box-980 {
+      width: 980px;
+    }
+
+    .box-1024 {
+      width: 1024px;
+    }
+
+    .box-1080 {
+      width: 1080px;
+    }
+
+    .box-1200 {
+      width: 1200px;
+    }
+
+    .box-1280 {
+      width: 1280px;
+    }
+    
+    .box-1920 {
+      width: 1920px;
+    }
+  </style>
+</head>
+
+<body style="margin:0">
+  <div>w=<span id="iw">?</span></div>
+  <div>h=<span id="ih">?</span></div>
+  <div class="box box-375">幅375pxのDiv(border-box)</div>
+  <div class="box box-744">幅744pxのDiv(border-box)</div>
+  <div class="box box-768">幅768pxのDiv(border-box)</div>
+  <script>
+  function getViewportSize() {
+    const w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+    const h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+
+    document.getElementById('iw').textContent = w;
+    document.getElementById('ih').textContent = h;
+  }
+  window.addEventListener('load', (e) => {
+    getViewportSize();
+  });
+  window.addEventListener('resize', (e) => {
+    getViewportSize();
+  });
+
+</script>
+</body>
+
+</html>
